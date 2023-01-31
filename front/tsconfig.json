@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ESNext",
+    "target": "ES2016",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "incremental": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "sourceMap": true,   
+  },
+  "exclude": ["dist", "node_modules", "cypress"]
+}
