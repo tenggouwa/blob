@@ -8,7 +8,14 @@
     "build": "webpack --env production --config ./build/devConfig.js"
   },
   "dependencies": {
+    "@arco-design/web-react": "^2.44.0",
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@types/node": "^18.11.18",
+    "@types/react-dom": "^18.0.10",
     "@types/webpack": "^5.28.0",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
@@ -25,6 +32,7 @@
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
+    "@types/react": "^18.0.27",
     "autoprefixer": "^10.4.13",
     "mini-css-extract-plugin": "^2.7.2",
     "postcss-loader": "^7.0.2",

@@ -2,18 +2,19 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",
-    "target": "ES2016",
+    "target": "ES2017",
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "allowJs": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "incremental": false,
     "skipLibCheck": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["src/*"]
     },
