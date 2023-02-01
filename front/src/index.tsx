@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { Button, Card, Link } from "@arco-design/web-react";
-import "@arco-design/web-react/dist/css/arco.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
+import AppRouter from '@/router';
 
-const AppPage = () => {
-  const [count, setCount] = useState(0);
-  
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1) }>{count}</button>
-      <Button type="primary" onClick={() => setCount(count + 1) }>{count}</Button>
-      <Card style={{ width: 360 }}
-        title='Arco Card'
-        extra={<Link>More</Link>}
-      >
-        ByteDance's core product, Toutiao ('Headlines'), is a content platform in China and around
-        the world. Toutiao started out as a news recommendation engine and gradually evolved into a
-        platform delivering content in various formats.
-      </Card>
-    </div>
-  )
+const renderWithHotReload = () => {
+  ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(<AppRouter />);
 }
 
-ReactDOM.render(
-  <AppPage />,
-  document.getElementById('root')
-);
+/*热更新*/
+renderWithHotReload();
+
+if (module.hot) {
+  module.hot.accept("@/router", () => {
+    renderWithHotReload();
+  });
+}

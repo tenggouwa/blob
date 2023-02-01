@@ -4,6 +4,7 @@
     "module": "ESNext",
     "target": "ES2017",
     "lib": ["DOM", "ESNext"],
+    "sourceMap": true,
     "strict": true,
     "allowJs": true,
     "esModuleInterop": true,
@@ -18,7 +19,6 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "sourceMap": true,   
   },
   "exclude": ["dist", "node_modules", "cypress"]
 }
