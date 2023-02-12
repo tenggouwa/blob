@@ -172,7 +172,11 @@ const config = (env) => {
       client: {
         logging: 'error'
       },
-      proxy: {},
+      proxy: {
+        '/api': {
+          target: 'http://localhost:5268/'
+        }
+      }
     },
     optimization: {
       runtimeChunk: 'single', //会将Webpack在浏览器端运行时需要的代码单独抽离到一个文件

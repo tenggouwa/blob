@@ -14,6 +14,7 @@ import RouterProgress from '@/components/routerProgress';
 
 const Home = React.lazy(() => import("@/pages/home"));
 const Login = React.lazy(() => import("@/pages/login"));
+const AllPromise = React.lazy(() => import("@/pages/AllPromise"));
 
 const AppRouter = () => {
   const { i18n } = useTranslation();
@@ -26,6 +27,8 @@ const AppRouter = () => {
               {/* <Route path="/" element={<Layout />}> */}
               <Route path="/" element={<Home />} />
               <Route path="login" element={<Login />} />
+              <Route path="promise" element={<AllPromise />} />
+              
               {/* <Route path="product" element={<Product />}>
                 <Route path=":id" element={<ProductDetail />} />
               </Route>
