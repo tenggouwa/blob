@@ -17,13 +17,14 @@ export default function AllPromise() {
 
   useEffect(() => {
     ListLen.forEach((item, index) => {
-      queue.current.push(() => getState(index))
+      // queue.current.push(() => getState(index))
+      getState(index);
     })
-    setTimeout(() => {
-      console.log(99999);
-      
-      queueLoop();
-    }, 2000);
+    queueLoop();
+    // setTimeout(() => {
+    //   console.log(99999);
+    //   queueLoop();
+    // }, 2000);
   }, [])
 
 
