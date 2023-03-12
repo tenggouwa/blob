@@ -22,8 +22,6 @@ const StarRating:React.FC<IStarRatingProps> = ({
     const { current: canvas } = canvasRef;
     const ratio = 4;
     const context = canvas!.getContext('2d');
-    const width = canvas!.width = 70;
-    const height = canvas!.height = 20;
     canvas!.height = height * ratio; // 实际渲染像素
     canvas!.width = width * ratio; // 实际渲染像素
     context!.scale(ratio, ratio);
@@ -66,7 +64,6 @@ const StarRating:React.FC<IStarRatingProps> = ({
 
     const drawStar = (props: drawProps) => {
       const {x, y, r, R, rot, index} = props;
-      // console.log(x, R, x - R,  x + R);
       const gradient = context!.createLinearGradient(x - R, 0 , x + R, 0)
       const stop = Math.min(Math.max((index + 1) * oneStarPercent - percent, 0), oneStarPercent)
 
