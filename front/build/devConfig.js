@@ -38,9 +38,9 @@ const config = (env) => {
           test: /\.tsx?$/,
           include: path.resolve(__dirname, "../src"),
           use: [
-            {
-              loader: path.resolve(__dirname, '../src/webpack/consoleLoader.js')
-            },
+            // {
+            //   loader: path.resolve(__dirname, '../src/webpack/consoleLoader.js')
+            // },
             { loader: 'ts-loader' }
           ]
         },
@@ -164,7 +164,7 @@ const config = (env) => {
     devServer: {
       hot: true,
       static: path.resolve(__dirname, "../dist"),
-      host: "localhost", // 可以使用手机访问
+      host: "0.0.0.0", // 可以使用手机访问
       port: 9999,
       compress: true,
       open: true, // TODO
