@@ -164,7 +164,7 @@ const config = (env) => {
     devServer: {
       hot: true,
       static: path.resolve(__dirname, "../dist"),
-      host: "0.0.0.0", // 可以使用手机访问
+      host: "localhost", // 可以使用手机访问
       port: 9999,
       compress: true,
       open: true, // TODO

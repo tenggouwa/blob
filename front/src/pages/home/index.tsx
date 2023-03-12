@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Input, Button, Checkbox, Spin } from '@arco-design/web-react';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +10,7 @@ const FormItem = Form.Item;
 
 const Home = () => {
   const [canvasList, setCanvasList] = useState<any>([])
+  const homeRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const changLan = () => {
@@ -22,8 +23,14 @@ const Home = () => {
     setCanvasList(canList);
   }, [])
 
+  const handleTop = () => {
+    homeRef!.current!.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
   return (
-    <div className="form">
+    <div className="form" ref={homeRef}>
       <Button onClick={changLan}>切换语言</Button>
       <Button type='primary' onClick={() => navigate('/login')}>去登录</Button>
       <p>{t('hello')}</p>
@@ -51,6 +58,9 @@ const Home = () => {
           <StarRating key={id} value={item} />
         ))
       }
+      <div
+        onClick={() => handleTop()}
+        style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1, background: 'yellow', width:'30px', height: '30px'}}> Top </div>
     </div>
     
   )
